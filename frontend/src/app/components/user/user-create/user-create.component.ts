@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router'
+import { User } from '../user.module';
 
 @Component({
   selector: 'app-user-create',
@@ -9,14 +10,23 @@ import { Router } from '@angular/router'
 })
 export class UserCreateComponent implements OnInit {
 
-  constructor(private user: UserService, private router: Router) { }
+  user: User = {
+    name: '',
+    occupation: '',
+    initialDate: ''
+  }
+
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
 
-  userCreate(): void {
-    this.user.showMessage('Usuário cadastrado!')
+  createUser(): void {
+    this.userService.create(this.user).subscribe(() => {
+      this.userService.showMessage('Usuário cadastrado!')
+      this.router.navigate(['/users'])
+    })
   }
 
   cancelar(): void {

@@ -19,7 +19,13 @@ import { ProductCrudComponent } from './views/product-crud/product-crud.componen
 import { UsersComponent } from './views/users/users.component';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
+import { HttpClientModule } from '@angular/common/http'
 
+import { FormsModule } from '@angular/forms'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
+import { ProductReadComponent } from './components/product/product-read/product-read.component';
+import { UserReadComponent } from './components/user/user-read/user-read.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +38,8 @@ import { UserCreateComponent } from './components/user/user-create/user-create.c
     UsersComponent,
     ProductCreateComponent,
     UserCreateComponent,
+    ProductReadComponent,
+    UserReadComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,11 @@ import { UserCreateComponent } from './components/user/user-create/user-create.c
     MatListModule,
     MatCardModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
