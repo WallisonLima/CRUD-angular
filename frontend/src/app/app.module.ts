@@ -30,7 +30,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSortModule } from '@angular/material/sort';
-import { ProductRead2Component } from './components/product/product-read2/product-read2.component';
 
 import {MatNativeDateModule} from '@angular/material/core';
 
@@ -46,7 +45,6 @@ import {MatNativeDateModule} from '@angular/material/core';
     ProductCreateComponent,
     UserCreateComponent,
     ProductReadComponent,
-    ProductRead2Component,
     UserReadComponent
   ],
   imports: [
