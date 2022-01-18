@@ -21,11 +21,18 @@ import { ProductCreateComponent } from './components/product/product-create/prod
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
 import { HttpClientModule } from '@angular/common/http'
 
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
 import { UserReadComponent } from './components/user/user-read/user-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSortModule } from '@angular/material/sort';
+import { ProductRead2Component } from './components/product/product-read2/product-read2.component';
+
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -39,6 +46,7 @@ import { UserReadComponent } from './components/user/user-read/user-read.compone
     ProductCreateComponent,
     UserCreateComponent,
     ProductReadComponent,
+    ProductRead2Component,
     UserReadComponent
   ],
   imports: [
@@ -54,7 +62,13 @@ import { UserReadComponent } from './components/user/user-read/user-read.compone
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -23,10 +23,15 @@ export class UserCreateComponent implements OnInit {
 
 
   createUser(): void {
-    this.userService.create(this.user).subscribe(() => {
-      this.userService.showMessage('Usuário cadastrado!')
-      this.router.navigate(['/users'])
-    })
+    if (this.user.initialDate === null) {
+      this.userService.showMessage('Data inválida! Por favor selecione o calendário.')
+    } else {
+      this.userService.create(this.user).subscribe(() => {
+        this.userService.showMessage('Usuário cadastrado!')
+        this.router.navigate(['/users'])
+      })
+    }
+
   }
 
   cancelar(): void {
